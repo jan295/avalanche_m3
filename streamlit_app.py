@@ -3,7 +3,7 @@ from snowflake.snowpark.context import get_active_session
 import pandas as pd
 import matplotlib.pyplot as plt
 
-# This does not work outside Snowflake
+# This does not work outside Snowflake, so you have to use SQL instead.
 # from snowflake.cortex import complete
 
 # Initialize the Streamlit app
