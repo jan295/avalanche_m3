@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 st.title("Avalanche Streamlit App")
 
 # Get data from Snowflake
-session = get_active_session()
+session = st.connection("snowflake").session()
 query = """
 SELECT
     *
