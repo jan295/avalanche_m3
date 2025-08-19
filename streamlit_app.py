@@ -63,9 +63,8 @@ st.subheader("Ask Questions About Your Data")
 user_question = st.text_input("Enter your question here:")
 
 if user_question:
-
-    # This does not work outside Snowflake
+    # The cortex complete does not work outside Snowflake
     # response = complete(model="claude-3-5-sonnet", prompt=f"Answer this question using the dataset: {user_question} <context>{df_string}</context>", session=session)
     # Use SQL instead:
-    response = session.sql(f"SELECT SNOWFLAKE.CORTEX.COMPLETE('claude-3-5-sonnet', '{prompt}') as RESPONSE;")
+    response = session.sql(f"SELECT SNOWFLAKE.CORTEX.COMPLETE('claude-3-5-sonnet', '{user_question}') as RESPONSE;")
     st.write(response)
